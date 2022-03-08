@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
-const dbConfig = require('../config/secret');
 const HttpStatus = require('http-status-codes');
+
+const dbConfigSECRET = process.env.SECRET;
 
 module.exports = {
     VerifyToken: (req, res, next) => {
@@ -15,7 +16,7 @@ module.exports = {
                 .json({ message: 'No token provided' });
         }
 
-        return jwt.verify(token, dbConfig.secret, (err, decoded) => {
+        return jwt.verify(token, dbConfigSECRET, (err, decoded) => {
             if (err) {
                 if (err.expiredAt < new Date()) {
 

@@ -6,11 +6,15 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
 const connectDB = require('./config/db');
+const dotenv = require('dotenv');
 
 const _ = require('lodash');
 
 const app = express();
 
+
+// Load env vars
+dotenv.config({ path: './config/config.env' });
 // Connect Database
 connectDB();
 
