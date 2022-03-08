@@ -68,6 +68,9 @@ app.use('/api', friendRoutes);
 app.use('/api', messageRoutes);
 app.use('/api', imageRoutes);
 
-server.listen(4000, () => {
-    console.log('Running on port 4000');
-})
+const PORT = process.env.PORT || 5000;
+
+server.listen(PORT,  console.log(
+    `Server runs in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
+  
+)
