@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 
 const User = require('../models/userModels');
 const Helpers = require('../Helpers/helpers');
-const dbConfig = require('../config/secret');
+const dbConfig = process.env.SECRET;
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const passwordresetToken = require('../models/resetTokenModel');

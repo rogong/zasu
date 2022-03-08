@@ -71,6 +71,6 @@ app.use('/api', imageRoutes);
 const PORT = process.env.PORT || 5000;
 
 server.listen(PORT,  console.log(
-    `Server runs in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
+    `Server runs in ${process.env.NODE_ENV} mode on port ${PORT}`
   
-)
+))
